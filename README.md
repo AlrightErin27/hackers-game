@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+## P2, Flatiron
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<center>
 
-## Available Scripts
+# Hacker's Game
 
-In the project directory, you can run:
+</center>
+<p align="center" height="50%">
+<img src="matrixgif.gif" alt="code gif"/>
+</p>
 
-### `npm start`
+### Summary:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It will be a game themed too look like what folks in the 90's though hacking looked like. This
+We will be using React as a framework/library, React Router, JSON server/API, JSX, JS, HTML & CSS. The user's data will be stored in a local DB, the game questions will be in JSX. All pop up will be useState dynamic divs.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align="center">
+<img src="hackers2.webp" alt="hackers gif 1"/>
+</p>
 
-### `npm test`
+### User Story:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- The opening page will "load" and they read opening info about the game. The user is asked to input the
+  their coding pen name.
+- Once the user is in, they see the game screen. The game screen will have a coding problem that
+  is written in JS and they choose from a optional choice answer below.
+- When they get the answer wrong they are greeted by a pop up that leads them to start over.
+- When they get the answer correct they move on to the next of 5 questions, while the score is still
+  shown on the left of the screen.
+- If all 5 questions are correct, the user is shown a leader board that will save their name and score.
 
-### `npm run build`
+<p align="center">
+<img src="hackers.gif" alt="hackers gif 2"/>
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Stretch Goals:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- CSS styling on the 90's Hackers theme.
+- Accessing an online API for a 4th page, that supplies facts about the history of software development in pop-culture.
+- Creating a sandbox to work in and submit answers using the Canvas element.
