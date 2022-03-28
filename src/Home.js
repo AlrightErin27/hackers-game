@@ -31,11 +31,11 @@ function Home() {
         <div id="press-start-2p">Font Example: press start 2p</div>
         <div id="permanent-marker">Font Example: permanent marker</div>
       </> */}
-      <NavBar />
+      {/* <NavBar /> */}
       <Login />
-      <Game />
-      <Result />
-      <div className="users-container">Past Hackers: {renderUsers}</div>
+      {/* <Game />
+      <Result /> */}
+      {/* <div className="users-container">Past Hackers: {renderUsers}</div> */}
     </div>
   );
 }

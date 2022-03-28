@@ -27,3 +27,14 @@ Body {
   outline: 1px solid white;
   max-width: 15rem;
 }
+/* //////////////////Log In Component////////////////// */
+.login-component {
+  background-color: rgb(37, 37, 37);
+  padding: 6rem;
+  margin: 6rem;
+  min-height: 10rem;
+}
+#timer-text {
+  font-family: "Press Start 2P", cursive;
+  font-size: 4rem;
+}
