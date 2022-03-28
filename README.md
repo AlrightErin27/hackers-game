@@ -8,7 +8,7 @@
 
 </center>
 <p align="center" height="50%">
-<img src="matrixgif.gif" alt="code gif"/>
+<img src="images/matrixgif.gif" alt="code gif"/>
 </p>
 
 ### Summary:
@@ -17,8 +17,10 @@ It will be a game themed too look like what folks in the 90's though hacking loo
 We will be using React as a framework/library, React Router, JSON server/API, JSX, JS, HTML & CSS. The user's data will be stored in a local DB, the game questions will be in JSX. All pop up will be useState dynamic divs. All database calls
 will be made using useEffect.
 
+We will run the server on PORT 3000.
+
 <p align="center">
-<img src="hackers2.webp" alt="hackers gif 1"/>
+<img src="images/hackers2.webp" alt="hackers gif 1"/>
 </p>
 
 ### User Story:
@@ -33,16 +35,16 @@ will be made using useEffect.
 - If all 5 questions are correct, the user is shown a leader board that will save their name and score.
 
 <p align="center">
-<img src="hackers.gif" alt="hackers gif 2"/>
+<img src="images/hackers.gif" alt="hackers gif 2"/>
 </p>
 
 ### Wire Frames:
 
 <p align="center">
-<img src="wireframes/w1.jpg" alt="wire frame 1"/>
-<img src="wireframes/w2.jpg" alt="wire frame 2"/>
-<img src="wireframes/w3.jpg" alt="wire frame 3"/>
-<img src="wireframes/w4.jpg" alt="wire frame 4"/>
+<img src="images/wireframes/w1.jpg" alt="wire frame 1"/>
+<img src="images/wireframes/w2.jpg" alt="wire frame 2"/>
+<img src="images/wireframes/w3.jpg" alt="wire frame 3"/>
+<img src="images/wireframes/w4.jpg" alt="wire frame 4"/>
 </p>
 
 ### Stretch Goals:
