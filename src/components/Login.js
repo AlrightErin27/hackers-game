@@ -19,17 +19,24 @@ function Login() {
       //console.log(loadTime);
     }, 600);
   };
+
   //useEffect allows this fxn to be called only once and right when the page loads
   useEffect(() => {
     handleLoading(7);
   }, []);
 
+  //stored form component here, uses state
   function Form() {
     //console.log("HERE");
+
+    //state used here to control the blinking curser in the input.
+    //boolean that changes the inputs class.
+    //in css this class is linked to a blinking animation
     const [isBlinking, setIsBlinking] = useState(true);
 
     function handleFormInputValue(e) {
       console.log(e.target.value);
+      //checks for any input into the form. If input, no more blinking
       if (e.target.value) setIsBlinking(false);
     }
 
