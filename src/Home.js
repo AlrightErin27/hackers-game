@@ -9,6 +9,7 @@ function Home() {
   // console.log("🌎 Hello World.");
   const userAPI = "http://localhost:3000/users";
   const [users, setUsers] = useState([]);
+  const [currentCoder, setCurrentCoder] = useState({});
 
   useEffect(() => {
     fetch(userAPI)
@@ -18,6 +19,28 @@ function Home() {
       .catch((err) => console.log("💀", err));
   }, []);
   //console.log(users);
+
+  //newCoder passed up through props from LoginForm.
+  //Fxn takes in newCoder's name and sets it to the currentCoder in state
+  //and adds to users in state
+  function handleNewCoder(newCoderName) {
+    //generates a new id number to put in new Coder obj
+    let idNum = Number(users[users.length - 1].id) + 1;
+    //console.log(idNum);
+
+    //console.log("NEW:", newCoderName);
+    let newCoderObj = {
+      id: idNum,
+      name: newCoderName,
+      score: 0,
+      isLoggedOn: true,
+    };
+
+    //sets new coder as current coder and adds to users list
+    setCurrentCoder(newCoderObj);
+    setUsers([...users, newCoderObj]);
+  }
+  console.log(users);
 
   const renderUsers = users.map((user) => {
     return <User key={user.id} user={user} />;
@@ -32,7 +55,7 @@ function Home() {
         <div id="permanent-marker">Font Example: permanent marker</div>
       </> */}
       {/* <NavBar /> */}
-      <Login />
+      <Login handleNewCoder={handleNewCoder} />
       {/* <Game />
       <Result /> */}
       {/* <div className="users-container">Past Hackers: {renderUsers}</div> */}

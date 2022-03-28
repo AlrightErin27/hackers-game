@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import LoginForm from "./LoginForm";
 // first screen seen. Has Loading... then log in form, after log in see home
 
-function Login() {
+function Login({ handleNewCoder }) {
   const [timerText, setTimerText] = useState("Loading...");
 
   //fxn handles amount of time "Loading.." is displayed
@@ -29,7 +29,9 @@ function Login() {
   return (
     <div className="login-component">
       <div id="timer-text">{timerText}</div>
-      <div className="form-wrapper">{!timerText ? <LoginForm /> : null}</div>
+      <div className="form-wrapper">
+        {!timerText ? <LoginForm handleNewCoder={handleNewCoder} /> : null}
+      </div>
     </div>
   );
 }
