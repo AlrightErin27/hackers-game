@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import LoginForm from "./LoginForm";
 // first screen seen. Has Loading... then log in form, after log in see home
 
 function Login() {
@@ -25,40 +26,10 @@ function Login() {
     handleLoading(7);
   }, []);
 
-  //stored form component here, uses state
-  function Form() {
-    //console.log("HERE");
-
-    //state used here to control the blinking curser in the input.
-    //boolean that changes the inputs class.
-    //in css this class is linked to a blinking animation
-    const [isBlinking, setIsBlinking] = useState(true);
-
-    function handleFormInputValue(e) {
-      console.log(e.target.value);
-      //checks for any input into the form. If input, no more blinking
-      if (e.target.value) setIsBlinking(false);
-    }
-
-    return (
-      <form>
-        <label id="form-label">Coder Name</label>
-        <input
-          type="text"
-          id={isBlinking ? "form-input" : "form-input-before"}
-          style={{ border: "none", autoFocus: true }}
-          placeholder="_"
-          onChange={handleFormInputValue}
-        />
-        <input type="submit" id="form-submit" />
-      </form>
-    );
-  }
-
   return (
     <div className="login-component">
       <div id="timer-text">{timerText}</div>
-      <div className="form-wrapper">{!timerText ? <Form /> : null}</div>
+      <div className="form-wrapper">{!timerText ? <LoginForm /> : null}</div>
     </div>
   );
 }
