@@ -38,3 +38,42 @@ Body {
   font-family: "Press Start 2P", cursive;
   font-size: 4rem;
 }
+.form-wrapper {
+  font-family: "Press Start 2P", cursive;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.form-wrapper input {
+  font-family: "Press Start 2P", cursive;
+  margin: 1rem;
+  background-color: transparent;
+  color: white;
+  position: relative;
+}
+.form-wrapper #form-input-before {
+  font-size: 1.5rem;
+}
+.form-wrapper #form-input {
+  animation-name: blink;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  font-size: 1.5rem;
+}
+.form-wrapper #form-submit {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
