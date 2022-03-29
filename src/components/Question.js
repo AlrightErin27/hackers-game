@@ -7,7 +7,7 @@ function Question({ question, nextQuestion }) {
   return (
     <>
       <h3>Question {id}</h3>
-      <h4>{questionPrompt}</h4>
+      <h4 id="question-prompt">{questionPrompt}</h4>
       {answers.map((answer, index) => {
         const isCorrect = index === correctAnswer;
         let answerLetter = "A";

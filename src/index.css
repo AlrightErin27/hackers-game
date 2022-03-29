@@ -104,7 +104,8 @@ input:focus {
   border: 1px solid rgb(109, 255, 90);
   /* text-align: center; */
 }
-
+#question-prompt {
+}
 /* //////////////////Users List////////////////// */
 .users-container {
   width: 25vw;

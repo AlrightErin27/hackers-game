@@ -35,6 +35,18 @@
       "name": "Cereal Killer",
       "score": 2,
       "key": 6
+    },
+    {
+      "name": "Crow",
+      "score": 0,
+      "key": 7,
+      "id": 7
+    },
+    {
+      "name": "",
+      "score": 0,
+      "key": 8,
+      "id": 8
     }
   ]
 }
