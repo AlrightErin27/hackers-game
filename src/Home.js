@@ -60,11 +60,9 @@ function Home() {
   useEffect(() => {
     fetch(userAPI)
       .then((res) => res.json())
-      // .then((data) => console.log(data))
       .then(setUsers)
       .catch((err) => console.log("💀", err));
   }, []);
-  //console.log(users);
 
   //newCoder passed up through props from LoginForm.
   //Fxn takes in newCoder's name
