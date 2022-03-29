@@ -92,6 +92,7 @@ input:focus {
 .answer-button {
   background-color: rgb(109, 255, 90);
   font-family: "Press Start 2P", cursive;
+  margin: 0.5rem 1rem 0.5rem 1rem;
 }
 .answer-button:hover {
   cursor: pointer;
@@ -102,9 +103,14 @@ input:focus {
   height: 90vh;
   font-family: "Rajdhani", sans-serif;
   border: 1px solid rgb(109, 255, 90);
-  /* text-align: center; */
+  text-align: center;
 }
-#question-prompt {
+.q-images {
+  height: 50vh;
+  max-width: 60vw;
+}
+.answer-container {
+  display: flex;
 }
 /* //////////////////Users List////////////////// */
 .users-container {
