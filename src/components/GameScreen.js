@@ -8,9 +8,11 @@ function GameScreen({ qList }) {
   //console.log(qList);
 
   return (
-    <div>
+    <div className="game-wrapper">
       {gameStatus ? (
-        <button onClick={() => setGameStatus(!gameStatus)}>Start</button>
+        <h3 className="start-button" onClick={() => setGameStatus(!gameStatus)}>
+          Start
+        </h3>
       ) : (
         <Game questions={questions} />
       )}

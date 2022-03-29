@@ -18,39 +18,42 @@ function Home() {
   const qList = [
     {
       id: 1,
-      questionPrompt: "question 1",
-      answers: ["A", "B", "C", "D"],
-      correctAnswer: 2,
-    },
-    {
-      id: 2,
-      questionPrompt: "question 2",
-      answers: ["A", "B", "C", "D"],
+      questionPrompt:
+        'const a = "Hello world";  const result = a.substring(2, 4); console.log(result)',
+      answers: ["ell", "ll", "el", "llo"],
       correctAnswer: 1,
     },
     {
+      id: 2,
+      questionPrompt:
+        "function(){setTimeout(()=> console.log(1),2000);console.log(2);setTimeout(()=> console.log(3),0);console.log(4);}",
+      answers: ["1 2 3 4", "2 1 3 4", "2 3 4 1", "2 4 3 1"],
+      correctAnswer: 3,
+    },
+    {
       id: 3,
-      questionPrompt: "question 3",
-      answers: ["A", "B", "C", "D"],
+      questionPrompt: "const a = true + true + true * 3; console.log(a)",
+      answers: ["5", "9", "ERROR", "NAN"],
       correctAnswer: 0,
     },
     {
       id: 4,
-      questionPrompt: "question 4",
-      answers: ["A", "B", "C", "D"],
+      questionPrompt:
+        "const a = Math.max(); const b = Math.min(); console.log(a); console.log(b);",
+      answers: [
+        "Infinity -Infinity",
+        "-Infinity Infinity",
+        "Infinity Infinity",
+        "-Infinity -Infinity",
+      ],
       correctAnswer: 1,
     },
     {
       id: 5,
-      questionPrompt: "question 5",
-      answers: ["A", "B", "C", "D"],
+      questionPrompt:
+        "let a = 1;  let b = 0;  while (a <= 3)  { a++;  b += a * 2;  console.log(b);}",
+      answers: ["undefined", "4 6 8", "1 2 3", "4 10 18"],
       correctAnswer: 3,
-    },
-    {
-      id: 6,
-      questionPrompt: "question 6",
-      answers: ["A", "B", "C", "D"],
-      correctAnswer: 1,
     },
   ];
 

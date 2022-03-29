@@ -75,32 +75,41 @@ input:focus {
   gap: 4rem;
 }
 /* ///////////////////////////GAME.JS//////////////////////////////////////////////// */
+.game-wrapper {
+  font-family: "Press Start 2P", cursive;
+}
+.start-button {
+  font-size: 4rem;
+  text-decoration: underline;
+  animation-name: blink;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+}
+.start-button:hover {
+  cursor: pointer;
+}
+
+.answer-button {
+  background-color: rgb(109, 255, 90);
+  font-family: "Press Start 2P", cursive;
+}
+.answer-button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
 .game-screen {
-  /* background-color: rgba(255, 255, 255, 0.034); */
   width: 70vw;
   height: 90vh;
   font-family: "Rajdhani", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border: 1px solid rgb(109, 255, 90);
+  /* text-align: center; */
 }
-.game-screen button {
-  font-family: "Press Start 2P", cursive;
-  background-color: black;
-  color: rgb(109, 255, 90);
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0 2rem 0 2rem;
-}
+
 /* //////////////////Users List////////////////// */
 .users-container {
   width: 25vw;
   height: 90vh;
   font-family: "Rajdhani", sans-serif;
-  /* background-color: rgba(56, 56, 56, 0); */
   font-size: 2rem;
 }
 .users-container h2 {
