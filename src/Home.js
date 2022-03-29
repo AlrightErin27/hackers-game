@@ -73,7 +73,6 @@ function Home() {
     let newCoderObj = {
       name: newCoderName,
       score: 0,
-      isLoggedOn: true,
       key: key,
     };
 
