@@ -8,8 +8,14 @@ import User from "./components/User";
 function Home() {
   // console.log("🌎Hello World.");
   const userAPI = "http://localhost:3000/users";
+  //handles the db list of users and their info
   const [users, setUsers] = useState([]);
+  //if someone has created a new hacker name it then shows the next screens
   const [hideLogin, setHideLogin] = useState(false);
+  //sets the current user and makes all other hackers not logged in
+  const [currentUser, setCurrentUser] = useState("");
+
+  //list of quiz questions in array
   const qList = [
     {
       id: 1,
@@ -62,20 +68,15 @@ function Home() {
   //Fxn takes in newCoder's name
   //and adds to users in state
   function handleNewCoder(newCoderName) {
-    //generates a new key number to put in new Coder obj
+    //generate new key
     let key = Number(users[users.length - 1].id) + 1;
-    console.log(key);
-
-    //console.log("NEW:", newCoderName);
     let newCoderObj = {
       name: newCoderName,
       score: 0,
       isLoggedOn: true,
       key: key,
     };
-
-    //sets new coder as current coder and adds to users list
-    // setCurrentCoder(newCoderObj);
+    setCurrentUser(newCoderName);
     setUsers([...users, newCoderObj]);
 
     fetch(userAPI, {
@@ -84,7 +85,6 @@ function Home() {
       body: JSON.stringify({ ...newCoderObj }),
     })
       .then((res) => res.json())
-      // .then((data) => console.log("🍔", data))
       .catch((err) => console.log("🔥", err));
 
     setHideLogin(true);
@@ -96,18 +96,19 @@ function Home() {
 
   return (
     <div className="Home">
-      {/* <>
-        <div id="red-hat-mono">Font Example: red hat mono</div>
-        <div id="rajdhani">Font Example: rajdhani</div>
-        <div id="press-start-2p">Font Example: press start 2p</div>
-        <div id="permanent-marker">Font Example: permanent marker</div>
-      </> */}
+      {hideLogin ? <p>{currentUser} @theHelm</p> : null}
       {/* <NavBar /> */}
-      {!hideLogin ? <Login handleNewCoder={handleNewCoder} /> : null}
+      {!hideLogin ? (
+        <Login handleNewCoder={handleNewCoder} users={users} />
+      ) : null}
       {hideLogin ? <GameScreen qList={qList} /> : null}
 
       {/*<Result /> */}
-      {/* <div className="users-container">Past Hackers: {renderUsers}</div> */}
+      {hideLogin ? (
+        <div className="users-container">
+          <h2>Relics:</h2> {renderUsers}
+        </div>
+      ) : null}
     </div>
   );
 }
