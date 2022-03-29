@@ -24,26 +24,35 @@ function Home() {
   //Fxn takes in newCoder's name and sets it to the currentCoder in state
   //and adds to users in state
   function handleNewCoder(newCoderName) {
-    //generates a new id number to put in new Coder obj
-    let idNum = Number(users[users.length - 1].id) + 1;
-    //console.log(idNum);
+    //generates a new key number to put in new Coder obj
+    let key = Number(users[users.length - 1].id) + 1;
+    console.log(key);
 
     //console.log("NEW:", newCoderName);
     let newCoderObj = {
-      id: idNum,
       name: newCoderName,
       score: 0,
       isLoggedOn: true,
+      key: key,
     };
 
     //sets new coder as current coder and adds to users list
-    setCurrentCoder(newCoderObj);
+    // setCurrentCoder(newCoderObj);
     setUsers([...users, newCoderObj]);
+
+    fetch(userAPI, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ ...newCoderObj }),
+    })
+      .then((res) => res.json())
+      // .then()
+      .catch((err) => console.log("🔥", err));
   }
   console.log(users);
 
   const renderUsers = users.map((user) => {
-    return <User key={user.id} user={user} />;
+    return <User key={user.key} user={user} />;
   });
 
   return (
@@ -58,7 +67,7 @@ function Home() {
       <Login handleNewCoder={handleNewCoder} />
       {/* <Game />
       <Result /> */}
-      {/* <div className="users-container">Past Hackers: {renderUsers}</div> */}
+      <div className="users-container">Past Hackers: {renderUsers}</div>
     </div>
   );
 }

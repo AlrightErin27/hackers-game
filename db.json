@@ -4,37 +4,43 @@
       "id": 1,
       "name": "Acid Burn",
       "score": 111,
-      "isLoggedOn": false
+      "isLoggedOn": false,
+      "key": 1
     },
     {
       "id": 2,
       "name": "Phantom Phreak",
       "score": 88,
-      "isLoggedOn": false
+      "isLoggedOn": false,
+      "key": 2
     },
     {
       "id": 3,
       "name": "Lord Nikon",
       "score": 56,
-      "isLoggedOn": false
+      "isLoggedOn": false,
+      "key": 3
     },
     {
       "id": 4,
       "name": "The Plague",
       "score": 21,
-      "isLoggedOn": false
+      "isLoggedOn": false,
+      "key": 4
     },
     {
       "id": 5,
       "name": "Zero Cool",
       "score": 9,
-      "isLoggedOn": false
+      "isLoggedOn": false,
+      "key": 5
     },
     {
       "id": 6,
       "name": "Cereal Killer",
       "score": 2,
-      "isLoggedOn": false
+      "isLoggedOn": false,
+      "key": 6
     }
   ]
 }
