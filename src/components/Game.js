@@ -19,7 +19,7 @@ function Game({ questions }) {
   console.log(currentQuestion);
   return (
     <div className="game-container">
-      {currentQuestionId < questions.length ? (
+      {currentQuestionId <= questions.length ? (
         <Question question={currentQuestion} nextQuestion={handleClick} />
       ) : (
         <h2>Number right: {numberOfCorrectAnswers}</h2>
