@@ -41,20 +41,6 @@
       "score": 2,
       "isLoggedOn": false,
       "key": 6
-    },
-    {
-      "name": "Erin ",
-      "score": 0,
-      "isLoggedOn": true,
-      "key": 7,
-      "id": 7
-    },
-    {
-      "name": "Freak",
-      "score": 0,
-      "isLoggedOn": true,
-      "key": 8,
-      "id": 8
     }
   ]
 }
