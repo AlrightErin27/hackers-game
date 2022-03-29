@@ -9,6 +9,7 @@ function Home() {
   // console.log("🌎 Hello World.");
   const userAPI = "http://localhost:3000/users";
   const [users, setUsers] = useState([]);
+  const [hideLogin, setHideLogin] = useState(false);
 
   useEffect(() => {
     fetch(userAPI)
@@ -19,8 +20,40 @@ function Home() {
   }, []);
   //console.log(users);
 
+  //newCoder passed up through props from LoginForm.
+  //Fxn takes in newCoder's name
+  //and adds to users in state
+  function handleNewCoder(newCoderName) {
+    //generates a new key number to put in new Coder obj
+    let key = Number(users[users.length - 1].id) + 1;
+    console.log(key);
+
+    //console.log("NEW:", newCoderName);
+    let newCoderObj = {
+      name: newCoderName,
+      score: 0,
+      isLoggedOn: true,
+      key: key,
+    };
+
+    //sets new coder as current coder and adds to users list
+    // setCurrentCoder(newCoderObj);
+    setUsers([...users, newCoderObj]);
+
+    fetch(userAPI, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ ...newCoderObj }),
+    })
+      .then((res) => res.json())
+      // .then((data) => console.log("🍔", data))
+      .catch((err) => console.log("🔥", err));
+
+    setHideLogin(true);
+  }
+
   const renderUsers = users.map((user) => {
-    return <User key={user.id} user={user} />;
+    return <User key={user.key} user={user} />;
   });
 
   return (
@@ -31,11 +64,12 @@ function Home() {
         <div id="press-start-2p">Font Example: press start 2p</div>
         <div id="permanent-marker">Font Example: permanent marker</div>
       </> */}
-      <NavBar />
-      <Login />
-      <Game />
-      <Result />
-      <div className="users-container">Past Hackers: {renderUsers}</div>
+      {/* <NavBar /> */}
+      {!hideLogin ? <Login handleNewCoder={handleNewCoder} /> : null}
+
+      {/* <Game />
+      <Result /> */}
+      {/* <div className="users-container">Past Hackers: {renderUsers}</div> */}
     </div>
   );
 }
