@@ -13,7 +13,7 @@ function Home() {
   //if someone has created a new hacker name it then shows the next screens
   const [hideLogin, setHideLogin] = useState(false);
   //sets the current user and makes all other hackers not logged in
-  const [currentUser, setCurrentUser] = useState("");
+  const [currentUser, setCurrentUser] = useState({});
 
   //list of quiz questions in array
   const qList = [
@@ -76,7 +76,9 @@ function Home() {
       isLoggedOn: true,
       key: key,
     };
-    setCurrentUser(newCoderName);
+
+    setCurrentUser(newCoderObj);
+
     setUsers([...users, newCoderObj]);
 
     fetch(userAPI, {
@@ -96,7 +98,7 @@ function Home() {
 
   return (
     <div className="Home">
-      {hideLogin ? <p>{currentUser} @theHelm</p> : null}
+      {hideLogin ? <p>{currentUser.name} @theHelm</p> : null}
       {/* <NavBar /> */}
       {!hideLogin ? (
         <Login handleNewCoder={handleNewCoder} users={users} />
