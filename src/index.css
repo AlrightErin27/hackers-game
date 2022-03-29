@@ -15,7 +15,6 @@ Body {
   font-family: "Red Hat Mono", monospace;
 }
 #rajdhani {
-  font-family: "Rajdhani", sans-serif;
 }
 #press-start-2p {
   font-family: "Press Start 2P", cursive;
@@ -23,9 +22,15 @@ Body {
 #permanent-marker {
   font-family: "Permanent Marker", cursive;
 }
+/* //////////////////Users List////////////////// */
 .users-container {
-  outline: 1px solid white;
+  /* outline: 1px solid white; */
   max-width: 15rem;
+  text-align: left;
+  font-family: "Rajdhani", sans-serif;
+}
+.users-container h2 {
+  font-family: "Press Start 2P", cursive;
 }
 /* //////////////////Log In Component////////////////// */
 
