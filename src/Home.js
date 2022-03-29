@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 // import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import GameScreen from "./components/GameScreen";
-// import Result from "./components/Result";
 import User from "./components/User";
 
 function Home() {
@@ -97,19 +96,24 @@ function Home() {
 
   return (
     <div className="Home">
-      {hideLogin ? <p>{currentUser.name} @theHelm</p> : null}
-      {/* <NavBar /> */}
+      {hideLogin ? (
+        <p id="at-helm">
+          {currentUser.name}@theHelm Score:{currentUser.score}
+        </p>
+      ) : null}
       {!hideLogin ? (
         <Login handleNewCoder={handleNewCoder} users={users} />
       ) : null}
-      {hideLogin ? <GameScreen qList={qList} /> : null}
 
-      {/*<Result /> */}
-      {hideLogin ? (
+      <div className={hideLogin ? "after-login-container" : "no"}>
+        <div className="game-screen">
+          <GameScreen qList={qList} />
+        </div>
+
         <div className="users-container">
           <h2>Relics:</h2> {renderUsers}
         </div>
-      ) : null}
+      </div>
     </div>
   );
 }

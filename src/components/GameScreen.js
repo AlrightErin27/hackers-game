@@ -9,7 +9,6 @@ function GameScreen({ qList }) {
 
   return (
     <div>
-      Game
       {gameStatus ? (
         <button onClick={() => setGameStatus(!gameStatus)}>Start</button>
       ) : (
