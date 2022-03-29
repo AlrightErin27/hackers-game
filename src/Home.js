@@ -1,15 +1,53 @@
 import { useEffect, useState } from "react";
-import NavBar from "./components/NavBar";
+// import NavBar from "./components/NavBar";
 import Login from "./components/Login";
-import Game from "./components/Game";
-import Result from "./components/Result";
+import GameScreen from "./components/GameScreen";
+// import Result from "./components/Result";
 import User from "./components/User";
 
 function Home() {
-  // console.log("🌎 Hello World.");
+  // console.log("🌎Hello World.");
   const userAPI = "http://localhost:3000/users";
   const [users, setUsers] = useState([]);
   const [hideLogin, setHideLogin] = useState(false);
+  const qList = [
+    {
+      id: 1,
+      questionPrompt: "question 1",
+      answers: ["A", "B", "C", "D"],
+      correctAnswer: 2,
+    },
+    {
+      id: 2,
+      questionPrompt: "question 2",
+      answers: ["A", "B", "C", "D"],
+      correctAnswer: 1,
+    },
+    {
+      id: 3,
+      questionPrompt: "question 3",
+      answers: ["A", "B", "C", "D"],
+      correctAnswer: 0,
+    },
+    {
+      id: 4,
+      questionPrompt: "question 4",
+      answers: ["A", "B", "C", "D"],
+      correctAnswer: 1,
+    },
+    {
+      id: 5,
+      questionPrompt: "question 5",
+      answers: ["A", "B", "C", "D"],
+      correctAnswer: 3,
+    },
+    {
+      id: 6,
+      questionPrompt: "question 6",
+      answers: ["A", "B", "C", "D"],
+      correctAnswer: 1,
+    },
+  ];
 
   useEffect(() => {
     fetch(userAPI)
@@ -66,9 +104,9 @@ function Home() {
       </> */}
       {/* <NavBar /> */}
       {!hideLogin ? <Login handleNewCoder={handleNewCoder} /> : null}
+      {hideLogin ? <GameScreen qList={qList} /> : null}
 
-      {/* <Game />
-      <Result /> */}
+      {/*<Result /> */}
       {/* <div className="users-container">Past Hackers: {renderUsers}</div> */}
     </div>
   );
