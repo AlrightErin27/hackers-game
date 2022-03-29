@@ -28,8 +28,9 @@ Body {
   max-width: 15rem;
 }
 /* //////////////////Log In Component////////////////// */
+
 .login-component {
-  background-color: rgb(37, 37, 37);
+  background-color: rgb(0, 0, 0);
   padding: 6rem;
   margin: 6rem;
   min-height: 10rem;
