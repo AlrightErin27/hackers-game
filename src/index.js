@@ -1,11 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM, { render } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import Home from "./Home";
 
-ReactDOM.render(
+const rootElement = document.getElementById("root");
+render(
   <React.StrictMode>
-    <Home />
+    <BrowserRouter>
+      <Home />
+    </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById("root")
+  rootElement
 );
