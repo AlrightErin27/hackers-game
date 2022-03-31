@@ -3,19 +3,19 @@
     {
       "id": 1,
       "name": "Acid Burn",
-      "score": 111,
+      "score": 0,
       "key": 1
     },
     {
       "id": 2,
       "name": "Phantom Phreak",
-      "score": 88,
+      "score": 1,
       "key": 2
     },
     {
       "id": 3,
       "name": "Lord Nikon",
-      "score": 56,
+      "score": 0,
       "key": 3
     },
     {
@@ -36,11 +36,7 @@
       "score": 2,
       "key": 6
     },
-    {
-      "name": "Erin",
-      "score": 0,
-      "key": 7,
-      "id": 7
+
     }
   ]
 }

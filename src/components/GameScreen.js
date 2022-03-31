@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Game from "./Game";
 
 // component holds the area where the game and multiple choice answers will be displayed
-function GameScreen({ qList }) {
+function GameScreen({ qList, currentUser, updateScore }) {
   const [questions, setQuestions] = useState(qList);
   const [gameStatus, setGameStatus] = useState(true);
   //console.log(qList);
@@ -14,7 +14,7 @@ function GameScreen({ qList }) {
           Start
         </h3>
       ) : (
-        <Game questions={questions} />
+        <Game questions={questions} currentUser={currentUser} updateScore={updateScore} />
       )}
     </div>
   );
