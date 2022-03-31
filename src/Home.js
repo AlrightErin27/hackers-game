@@ -14,7 +14,10 @@ function Home() {
   //sets the current user and makes all other hackers not logged in
   const [currentUser, setCurrentUser] = useState({});
 
+  const [updateScore, setUpdatedScore] = useState(21123)
+
   //list of quiz questions in array
+  
   const qList = [
     {
       id: 1,
@@ -62,7 +65,7 @@ function Home() {
       .then((res) => res.json())
       .then(setUsers)
       .catch((err) => console.log("💀", err));
-  }, []);
+  }, [updateScore]);
 
   //newCoder passed up through props from LoginForm.
   //Fxn takes in newCoder's name
@@ -94,12 +97,13 @@ function Home() {
   const renderUsers = users.map((user) => {
     return <User key={user.key} user={user} />;
   });
+  console.log(users)
 
   return (
     <div className="Home">
       {hideLogin ? (
         <p id="at-helm">
-          {currentUser.name}@theHelm Score:{currentUser.score}
+          {currentUser.name}@theHelm Score:{users[currentUser.key-1].score}
         </p>
       ) : null}
       {!hideLogin ? (
@@ -108,7 +112,7 @@ function Home() {
 
       <div className={hideLogin ? "after-login-container" : "no"}>
         <div className="game-screen">
-          <GameScreen qList={qList} />
+          <GameScreen qList={qList} currentUser={currentUser} updateScore={setUpdatedScore} />
         </div>
 
         <div className="users-container">

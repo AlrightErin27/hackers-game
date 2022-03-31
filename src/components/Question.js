@@ -15,7 +15,7 @@ function Question({ question, nextQuestion }) {
   //image position in arr matches question id
   const imgArr = [img01, img02, img03, img04, img05];
   useEffect(() => {
-    for (let i = 1; i < imgArr.length; i++) {
+    for (let i = 0; i < imgArr.length; i++) {
       if (id === i) {
         setCurrImg(imgArr[i].toString());
       }
