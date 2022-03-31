@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
+import { useHistory, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Login from "./components/Login";
 import GameScreen from "./components/GameScreen";
-import User from "./components/User";
 
 function Home() {
-  // console.log("🌎Hello World.");
+  //declare useHistory for Router
+  let history = useHistory();
+
   const userAPI = "http://localhost:3000/users";
   //handles the db list of users and their info
   const [users, setUsers] = useState([]);
@@ -13,11 +14,10 @@ function Home() {
   const [hideLogin, setHideLogin] = useState(false);
   //sets the current user and makes all other hackers not logged in
   const [currentUser, setCurrentUser] = useState({});
-
-  const [updateScore, setUpdatedScore] = useState(21123)
+  //patches score
+  const [updateScore, setUpdatedScore] = useState(21123);
 
   //list of quiz questions in array
-  
   const qList = [
     {
       id: 1,
@@ -79,8 +79,8 @@ function Home() {
       key: key,
     };
 
+    //change state
     setCurrentUser(newCoderObj);
-
     setUsers([...users, newCoderObj]);
 
     fetch(userAPI, {
@@ -94,31 +94,26 @@ function Home() {
     setHideLogin(true);
   }
 
-  const renderUsers = users.map((user) => {
-    return <User key={user.key} user={user} />;
-  });
-  console.log(users)
+  //dynamically switches routes
+  if (!hideLogin) {
+    history.push("/login");
+  } else {
+    history.push("/game-screen");
+  }
 
   return (
     <div className="Home">
-      {hideLogin ? (
-        <p id="at-helm">
-          {currentUser.name}@theHelm Score:{users[currentUser.key-1].score}
-        </p>
-      ) : null}
-      {!hideLogin ? (
+      <Route path="/login">
         <Login handleNewCoder={handleNewCoder} users={users} />
-      ) : null}
-
-      <div className={hideLogin ? "after-login-container" : "no"}>
-        <div className="game-screen">
-          <GameScreen qList={qList} currentUser={currentUser} updateScore={setUpdatedScore} />
-        </div>
-
-        <div className="users-container">
-          <h2>Relics:</h2> {renderUsers}
-        </div>
-      </div>
+      </Route>
+      <Route path="/game-screen">
+        <GameScreen
+          qList={qList}
+          currentUser={currentUser}
+          updateScore={setUpdatedScore}
+          users={users}
+        />
+      </Route>
     </div>
   );
 }
