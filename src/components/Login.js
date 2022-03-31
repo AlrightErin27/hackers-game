@@ -23,7 +23,7 @@ function Login({ handleNewCoder }) {
 
   //useEffect allows this fxn to be called only once and right when the page loads
   useEffect(() => {
-    handleLoading(1);
+    handleLoading(7);
   }, []);
 
   return (

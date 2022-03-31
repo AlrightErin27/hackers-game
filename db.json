@@ -29,6 +29,12 @@
       "name": "Zero Cool",
       "score": 9,
       "key": 5
+    },
+    {
+      "id": 6,
+      "name": "Cereal Killer",
+      "score": 2,
+      "key": 6
     }
   ]
 }
