@@ -7,7 +7,7 @@ function Home() {
   //declare useHistory for Router
   let history = useHistory();
 
-  const userAPI = "http://localhost:3000/users";
+  const userAPI = "http://localhost:3001/users";
   //handles the db list of users and their info
   const [users, setUsers] = useState([]);
   //if someone has created a new hacker name it then shows the next screens

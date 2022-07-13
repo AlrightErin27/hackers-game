@@ -17,7 +17,7 @@ It will be a game themed too look like what folks in the 90's though hacking loo
 We will be using React as a framework/library, React Router, JSON server/API, JSX, JS, HTML & CSS. The user's data will be stored in a local DB, the game questions will be in JSX. All pop up will be useState dynamic divs. All database calls
 will be made using useEffect.
 
-🚢: Server on PORT 3000.
+🚢: Server on PORT 3001.
 
 <p align="center">
 <img src="images/hackers2.webp" alt="hackers gif 1"/>
